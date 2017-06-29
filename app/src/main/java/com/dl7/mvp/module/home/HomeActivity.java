@@ -85,7 +85,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         mSparseTags.put(R.id.nav_news, "News");
         mSparseTags.put(R.id.nav_photos, "Photos");
         mSparseTags.put(R.id.nav_videos, "Videos");
-        _getPermission();
+        getPermission();
     }
 
     @Override
@@ -155,7 +155,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         navView.setNavigationItemSelectedListener(this);
     }
 
-    private void _getPermission() {
+    private void getPermission() {
         new RxPermissions(this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
                 .subscribe(new Action1<Boolean>() {
                     @Override
